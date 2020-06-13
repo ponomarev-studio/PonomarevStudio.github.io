@@ -3,3 +3,83 @@
     touch-action: manipulation;
 }
 
+body {
+    margin: unset;
+}
+
+.headerLogo {
+    --size: 100px;
+    --margin: 20px;
+    --filter: brightness(1.2) saturate(150%) blur(35px);
+    -webkit-backdrop-filter: var(--filter);
+    backdrop-filter: var(--filter);
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: 2019;
+    position: fixed;
+    left: var(--margin);
+    top: var(--margin);
+}
+
+.headerLogo:after {
+    content: ' ';
+    background-image: url('https://ponomarev.studio/images/logo/Gradient.128px.png');
+    position: absolute;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.headerLogo,
+.headerLogo:after {
+    -webkit-mask-image: urL('https://ponomarev.studio/images/logo/Mono.svg');
+    -webkit-mask-size: contain;
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: var(--size);
+    height: calc(var(--size) / 2);
+}
+
+.headerLogo:hover:after,
+.headerLogo:focus:after {
+    opacity: 1;
+}
+
+.headerLogo:active {
+    transform: scale(.9);
+}
+
+.headerMenu {
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    width: calc(100% - 40px);
+    margin: 40px 20px;
+    padding: unset;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(95, 92, 92, .2);
+}
+
+.headerMenu:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: brightness(1.2) saturate(150%) blur(35px);
+    -webkit-backdrop-filter: brightness(1.2) saturate(150%) blur(35px);
+}
+
+.toggleMenu {
+    color: transparent;
+}
+
+.portfolioItem {
+    width: 100%;
+    height: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
