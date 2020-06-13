@@ -54,17 +54,21 @@ body {
 
 .headerMenu {
     position: fixed;
+    display: flex;
+    justify-content: space-between;
     bottom: 0;
     height: 50px;
     width: calc(100% - 40px);
     margin: 40px 20px;
     padding: unset;
     border-radius: 20px;
-    box-shadow: 0 5px 20px rgba(95, 92, 92, .2);
+    box-shadow: 0 5px 20px 5px rgba(95, 92, 92, .2);
 }
 
 .headerMenu:before {
     content: '';
+    position: absolute;
+    z-index: -1;
     display: block;
     width: 100%;
     height: 100%;
@@ -75,7 +79,41 @@ body {
 }
 
 .toggleMenu {
-    color: transparent;
+    display: flex;
+    color: rgba(0, 0, 0, .8);
+    height: 100%;
+    width: 50px;
+    /*line-height: 50px;*/
+    text-align: center;
+    font-size: 0;
+    text-decoration: none;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 18px 15px;
+    margin: 0 5px;
+}
+
+.toggleMenu:before,
+.toggleMenu:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    border-radius: 1px;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+.sendMessage {
+    display: block;
+    height: 100%;
+    width: 50px;
+    font-size: 0;
+    background-image: url("../../images/comment.svg");
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: center;
+    opacity: .8;
+    margin: 0 5px;
 }
 
 .cover {
