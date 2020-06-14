@@ -86,6 +86,7 @@ body {
     display: flex;
     justify-content: space-between;
     height: 50px;
+    overflow: hidden;
 }
 
 .menuContent {
@@ -96,7 +97,7 @@ body {
     max-height: 0;
     padding: 0 20px;
     flex-direction: column;
-    border-bottom: solid 0px rgba(50, 50, 50, 0.1);
+    border-bottom: solid 1px transparent;
 }
 
 .menuContent > a {
@@ -125,12 +126,20 @@ body {
 }
 
 .menuItem {
+    transition: transform .2s .2s ease-out, opacity .1s .3s ease-out;
     height: 50px;
     /*margin: 0 5px;*/
     line-height: 50px;
     text-align: center;
     color: inherit;
     text-decoration: none;
+}
+
+.headerMenu:target .menuItem {
+    transition: transform .2s ease-out, opacity .1s ease-in;
+    opacity: 0;
+    transform: translate(0, -50px);
+    pointer-events: none;
 }
 
 .toggleMenu {
