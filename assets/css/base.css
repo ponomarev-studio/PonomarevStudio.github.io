@@ -53,6 +53,7 @@ body {
 }
 
 .headerMenu {
+    transition: box-shadow .4s ease-out;
     position: fixed;
     bottom: 0;
     width: calc(100% - 40px);
@@ -63,6 +64,7 @@ body {
 }
 
 .headerMenu:before {
+    transition: background .4s ease-out;
     content: '';
     position: absolute;
     z-index: -1;
@@ -75,6 +77,11 @@ body {
     -webkit-backdrop-filter: brightness(1.2) saturate(150%) blur(35px);
 }
 
+.headerMenu:target:before {
+    transition: background .3s ease-in;
+    background: rgba(255, 255, 255, 0.4);
+}
+
 .menuBar {
     display: flex;
     justify-content: space-between;
@@ -82,12 +89,14 @@ body {
 }
 
 .menuContent {
-    display: none;
+    transition: all .3s ease-out;
+    display: flex;
+    overflow: hidden;
     width: 100%;
-    height: auto;
+    max-height: 0;
+    padding: 0 20px;
     flex-direction: column;
-    padding: 20px;
-    border-bottom: solid 1px rgba(50, 50, 50, 0.1);
+    border-bottom: solid 0px rgba(50, 50, 50, 0.1);
 }
 
 .menuContent > a {
@@ -96,8 +105,23 @@ body {
     line-height: 2.5em;
 }
 
+.menuContent > a:first-child {
+    margin-top: 20px;
+}
+
+.menuContent > a:last-child {
+    margin-bottom: 20px;
+}
+
+.headerMenu:target {
+    transition: box-shadow .3s ease-in;
+    box-shadow: 0 5px 40px 10px rgba(0, 0, 0, 0.3);
+}
+
 .headerMenu:target > .menuContent {
-    display: flex;
+    transition: all .5s ease-in;
+    max-height: 500px;
+    border-bottom: solid 1px rgba(50, 50, 50, 0.1);
 }
 
 .menuItem {
@@ -126,7 +150,7 @@ body {
 
 .toggleMenu:before,
 .toggleMenu:after {
-    transition: transform .3s;
+    transition: transform .4s ease-out;
     content: '';
     display: block;
     width: 100%;
@@ -137,6 +161,11 @@ body {
 
 .headerMenu:target .toggleMenu {
     pointer-events: none;
+}
+
+.headerMenu:target .toggleMenu:before,
+.headerMenu:target .toggleMenu:after {
+    transition: transform .3s ease-in;
 }
 
 .headerMenu:target .toggleMenu:before {
