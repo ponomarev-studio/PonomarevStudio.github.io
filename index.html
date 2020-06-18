@@ -10,6 +10,7 @@
 <body>
 <header>
     <a class="headerLogo" href="/"></a>
+    <input id="toggleMenu" type="checkbox"/>
     <menu class="headerMenu" id="menu">
         <nav class="menuContent">
             <a href="#!">Начало</a>
@@ -18,58 +19,137 @@
             <a href="#!">Контакты</a>
         </nav>
         <nav class="menuBar">
-            <a class="toggleMenu" href="#menu">Открыть меню</a>
+            <!--            <a class="toggleMenu" href="#menu">Открыть меню</a>-->
+            <label class="openMenu" for="toggleMenu">Открыть меню</label>
             <a class="menuItem" href="#!">Решения</a>
             <a class="menuItem" href="#!">Услуги</a>
             <a class="sendMessage" href="#!">Отправить сообщение</a>
-            <a class="closeMenu" href="#!">Загрыть меню</a>
+            <label class="closeMenu" for="toggleMenu">Открыть меню</label>
+            <!--            <a class="closeMenu" href="#!">Загрыть меню</a>-->
         </nav>
     </menu>
 </header>
 <main>
-    <section class="cover"></section>
-    <section class="portfolioItem"
-             style="background-image: url('images/portfolio/CottonBaby.png');background-color: #5F6363;color: white">
-        <h3>Разработка Интернет-Магазина</h3>
-        <span>CottonBaby.ru</span>
-    </section>
-    <section class="portfolioItem" style="background-image: url('images/portfolio/Kurbikus.png')">
-        <h3>Верстка Корпоративного Сайта</h3>
-        <span>Kurbikus.Digital</span>
-    </section>
-    <section class="portfolioItem"
-             style="background-image: url('images/portfolio/EastoLogy.png');background-color: #6A6593;color: white">
-        <h3>Создание Портала Для Онлайн Консультаций</h3>
-        <span>EastoLogy.ru</span>
-    </section>
-    <section class="portfolioItem"
-             style="background-image: url('images/portfolio/eskont.png');background-color: #40474E;color: white">
-        <h3>Прототипирование Сайта Архитектурного Бюро</h3>
-        <span>Eskont.com</span>
-    </section>
-    <section class="portfolioItem"
-             style="background-image: url('images/portfolio/TrustService.png');background-color: #222023;color: white">
-        <h3>Front-end Разработка Корпоративного Сайта</h3>
-        <span>TSR.kg</span>
-    </section>
-    <section class="portfolioItem" style="background-image: url('images/portfolio/Priem.png');">
-        <h3>JavaScript Разработка Виджета Чат-поддержки</h3>
-        <span>100% Прием (Рабочее название)</span>
-    </section>
-    <section class="portfolioItem"
-             style="background-image: url('images/portfolio/PRakula.png');background-color: #FBFBFB;">
-        <h3>Full-stack Разрабока Аналитического Сервиса</h3>
-        <span>PRakula.ru</span>
-    </section>
-    <section class="portfolioItem" style="background-image: url('images/portfolio/flatsy.jpg')">
-        <h3>Back-end Разработка Менеджера Проектов</h3>
-        <span>Flatsy.ru</span>
-    </section>
-    <section class="portfolioItem"
-             style="background-image: url('images/portfolio/a-coin.png');background-color: #3BA3DD;background-size: cover; background-position: center;color: white">
-        <h3>Программирование интерактивной презентации на Electron.js</h3>
-        <span>A-coin (Рабочее название)</span>
-    </section>
+    <div style="--slide-number:0">
+        <section class="cover"></section>
+    </div>
+    <div style="--slide-number:1">
+        <section class="portfolioItem" style="background-color: #5F6363;color: white">
+            <h3>Разработка Интернет-Магазина</h3>
+            <span>CottonBaby.ru</span>
+            <figure class="img-slider">
+                <div>
+                    <img src="images/portfolio/CottonBaby.png">
+                    <img src="images/portfolio/CottonBaby.png">
+                    <img src="images/portfolio/CottonBaby.png">
+                </div>
+            </figure>
+        </section>
+    </div>
+    <div style="--slide-number:2">
+        <section class="portfolioItem">
+            <h3>Верстка Корпоративного Сайта</h3>
+            <span>Kurbikus.Digital</span>
+            <figure class="img-slider">
+                <div>
+                    <img src="images/portfolio/Kurbikus.png">
+                    <img src="images/portfolio/Kurbikus.png">
+                    <img src="images/portfolio/Kurbikus.png">
+                </div>
+            </figure>
+        </section>
+    </div>
+    <div style="--slide-number:3">
+        <section class="portfolioItem" style="background-color: #6A6593;color: white">
+            <h3>Создание Портала Для Онлайн Консультаций</h3>
+            <span>EastoLogy.ru</span>
+            <figure class="img-slider">
+                <div>
+                    <img src="images/portfolio/EastoLogy.png">
+                    <img src="images/portfolio/EastoLogy.png">
+                    <img src="images/portfolio/EastoLogy.png">
+                </div>
+            </figure>
+        </section>
+    </div>
+    <div style="--slide-number:4">
+        <section class="portfolioItem" style="background-color: #40474E;color: white">
+            <h3>Прототипирование Сайта Архитектурного Бюро</h3>
+            <span>Eskont.com</span>
+            <figure class="img-slider">
+                <div>
+                    <img src="images/portfolio/eskont.png">
+                    <img src="images/portfolio/eskont.png">
+                    <img src="images/portfolio/eskont.png">
+                </div>
+            </figure>
+        </section>
+    </div>
+    <div style="--slide-number:5">
+        <section class="portfolioItem" style="background-color: #222023;color: white">
+            <h3>Front-end Разработка Корпоративного Сайта</h3>
+            <span>TSR.kg</span>
+            <figure class="img-slider">
+                <div>
+                    <img src="images/portfolio/TrustService.png">
+                    <img src="images/portfolio/TrustService.png">
+                    <img src="images/portfolio/TrustService.png">
+                </div>
+            </figure>
+        </section>
+    </div>
+    <div style="--slide-number:6">
+        <section class="portfolioItem">
+            <h3>JavaScript Разработка Виджета Чат-поддержки</h3>
+            <span>100% Прием (Рабочее название)</span>
+            <figure class="img-slider">
+                <div>
+                    <img src="images/portfolio/Priem.png">
+                    <img src="images/portfolio/Priem.png">
+                    <img src="images/portfolio/Priem.png">
+                </div>
+            </figure>
+        </section>
+    </div>
+    <div style="--slide-number:7">
+        <section class="portfolioItem" style="background-color: #FBFBFB;">
+            <h3>Full-stack Разрабока Аналитического Сервиса</h3>
+            <span>PRakula.ru</span>
+            <figure class="img-slider">
+                <div>
+                    <img src="images/portfolio/PRakula.png">
+                    <img src="images/portfolio/PRakula.png">
+                    <img src="images/portfolio/PRakula.png">
+                </div>
+            </figure>
+        </section>
+    </div>
+    <div style="--slide-number:8">
+        <section class="portfolioItem">
+            <h3>Back-end Разработка Менеджера Проектов</h3>
+            <span>Flatsy.ru</span>
+            <figure class="img-slider">
+                <div>
+                    <img src="images/portfolio/flatsy.jpg">
+                    <img src="images/portfolio/flatsy.jpg">
+                    <img src="images/portfolio/flatsy.jpg">
+                </div>
+            </figure>
+        </section>
+    </div>
+    <div style="--slide-number:9">
+        <section class="portfolioItem" style="background-color: #3BA3DD;color: white">
+            <h3>Программирование интерактивной презентации на Electron.js</h3>
+            <span>A-coin (Рабочее название)</span>
+            <figure class="img-slider">
+                <div>
+                    <img src="images/portfolio/a-coin.png">
+                    <img src="images/portfolio/a-coin.png">
+                    <img src="images/portfolio/a-coin.png">
+                </div>
+            </figure>
+        </section>
+    </div>
 </main>
 <footer>
 
