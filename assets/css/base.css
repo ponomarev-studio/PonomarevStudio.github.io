@@ -10,7 +10,7 @@ body {
 }
 
 .headerLogo {
-    --size: 100px;
+    --size: 70px;
     --margin: 20px;
     --filter: brightness(1.2) saturate(150%) blur(35px);
     -webkit-backdrop-filter: var(--filter);
@@ -78,8 +78,8 @@ body {
     -webkit-backdrop-filter: brightness(1.2) saturate(150%) blur(35px);
 }
 
-.headerMenu:target:before {
-    transition: background .3s ease-in;
+#toggleMenu:checked ~ .headerMenu:before {
+    transition: background .3s ease-out;
     background: rgba(255, 255, 255, 0.4);
 }
 
@@ -120,12 +120,12 @@ body {
 }
 
 #toggleMenu:checked ~ .headerMenu {
-    transition: box-shadow .3s ease-in;
+    transition: box-shadow .3s ease-out;
     box-shadow: 0 5px 40px 10px rgba(0, 0, 0, 0.3);
 }
 
 #toggleMenu:checked ~ .headerMenu > .menuContent {
-    transition: all .5s ease-in;
+    transition: all .5s ease-out;
     max-height: 500px;
     border-bottom: solid 1px rgba(50, 50, 50, 0.1);
 }
@@ -141,7 +141,7 @@ body {
 }
 
 #toggleMenu:checked ~ .headerMenu .menuItem {
-    transition: transform .2s ease-out, opacity .1s ease-in;
+    transition: transform .2s ease-out, opacity .1s ease-out;
     opacity: 0;
     transform: translate(0, -50px);
     pointer-events: none;
@@ -179,7 +179,7 @@ body {
 
 #toggleMenu:checked ~ .headerMenu .openMenu:before,
 #toggleMenu:checked ~ .headerMenu .openMenu:after {
-    transition: transform .3s ease-in;
+    transition: transform .3s ease-out;
 }
 
 #toggleMenu:checked ~ .headerMenu .openMenu:before {
@@ -251,7 +251,6 @@ main > div:last-child > section:before {
 
 main > div:last-child > section {
     height: calc(100vh + 25px + 15px);
-    scroll-snap-align: center;
 }
 
 main > div:last-child {
@@ -285,7 +284,7 @@ main > div > section {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    padding-top: 100px;
+    padding-top: 80px;
     transform: translate(0, -25px);
     height: calc(100vh + 25px);
     border-radius: 15px;
@@ -340,7 +339,7 @@ main > div > section {
 }
 
 .img-slider img {
-    height: 100vw;
+    height: 40vh;
     min-width: 100vw;
     scroll-snap-align: center;
     object-fit: contain;
@@ -348,6 +347,7 @@ main > div > section {
 }
 
 footer {
-    height: 50vh;
+    height: 100vh;
+    background-color: black;
     scroll-snap-align: start;
 }
