@@ -6,7 +6,7 @@
 body {
     margin: unset;
     font-family: "SF Pro Text", -apple-system, sans-serif;
-    /*scroll-snap-type: y mandatory;*/
+    scroll-snap-type: y mandatory;
 }
 
 .headerLogo {
@@ -236,7 +236,7 @@ main > div {
     height: calc((10 - var(--slide-number)) * 100vh);
     z-index: var(--slide-number);
     top: calc(var(--slide-number) * 100vh);
-    /*scroll-snap-align: start;*/
+    scroll-snap-align: start;
 }
 
 main > div:not(:first-child),
@@ -349,5 +349,5 @@ main > div > section {
 
 footer {
     height: 50vh;
-    /*scroll-snap-align: start;*/
+    scroll-snap-align: start;
 }
