@@ -12,7 +12,7 @@ body {
     margin: unset;
     font-family: "SF Pro Text", -apple-system, sans-serif;
     scroll-snap-type: y mandatory;
-    background-color: black;
+    background-color: #444E8D;
 }
 
 .headerLogo {
