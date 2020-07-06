@@ -3,6 +3,10 @@
     touch-action: manipulation;
 }
 
+:root{
+    overflow-x: hidden;
+}
+
 body {
     margin: unset;
     font-family: "SF Pro Text", -apple-system, sans-serif;
@@ -334,6 +338,7 @@ main > div > section {
     display: flex;
     justify-content: space-between;
     overflow: scroll;
+    overflow-x: hidden;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
 }
