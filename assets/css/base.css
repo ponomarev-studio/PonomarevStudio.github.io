@@ -5,12 +5,14 @@
 
 :root {
     overflow-x: hidden;
+    background-color: #444E8D;
 }
 
 body {
     margin: unset;
     font-family: "SF Pro Text", -apple-system, sans-serif;
     scroll-snap-type: y mandatory;
+    background-color: black;
 }
 
 .headerLogo {
@@ -294,6 +296,7 @@ main > div > section {
 
 .cover > ul > li {
     font-size: 20px;
+    font-weight: 500;
     /*padding-left: 1em;*/
     /*text-indent: -1em;*/
     line-height: 40px;
