@@ -12,7 +12,7 @@ body {
 .headerLogo {
     --size: 70px;
     --margin: 20px;
-    --filter: brightness(1.2) saturate(150%) blur(35px);
+    --filter: brightness(1.2) /*saturate(150%)*/ blur(50px);
     -webkit-backdrop-filter: var(--filter);
     backdrop-filter: var(--filter);
     background-color: rgba(200, 200, 200, 0.2);
@@ -74,8 +74,8 @@ body {
     height: 100%;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: brightness(1.2) saturate(150%) blur(35px);
-    -webkit-backdrop-filter: brightness(1.2) saturate(150%) blur(35px);
+    backdrop-filter: brightness(1.2) saturate(150%) blur(20px);
+    -webkit-backdrop-filter: brightness(1.2) saturate(150%) blur(20px);
 }
 
 #toggleMenu:checked ~ .headerMenu:before {
