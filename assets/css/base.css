@@ -3,7 +3,7 @@
     touch-action: manipulation;
 }
 
-:root{
+:root {
     overflow-x: hidden;
 }
 
@@ -278,7 +278,32 @@ main > div > section {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    padding-top: 100px;
+    padding-top: 80px;
+}
+
+.cover > h1 {
+    font-size: 40px;
+    margin: unset;
+}
+
+.cover > ul {
+    list-style: none;
+    /*margin-left: -10px;*/
+    padding-left: 0;
+}
+
+.cover > ul > li {
+    font-size: 20px;
+    /*padding-left: 1em;*/
+    /*text-indent: -1em;*/
+    line-height: 40px;
+}
+
+.cover > ul > li:before {
+    content: attr(data-icon);
+    font-size: 20px;
+    line-height: 30px;
+    padding-right: 10px;
 }
 
 .portfolioItem {
