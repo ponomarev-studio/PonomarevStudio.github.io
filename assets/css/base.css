@@ -4,7 +4,6 @@
 }
 
 :root {
-    overflow-x: hidden;
     background-color: #444E8D;
 }
 
@@ -370,6 +369,10 @@ main > div > section {
     background: var(--accent-color, black);
     opacity: .5;
     border-radius: calc(var(--height) / 2);
+}
+
+.portfolioItem > span {
+    font-weight: 500;
 }
 
 .img-slider {

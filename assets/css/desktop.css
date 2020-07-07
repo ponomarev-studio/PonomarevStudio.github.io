@@ -1,3 +1,7 @@
+:root {
+    overflow-x: hidden;
+}
+
 .headerMenu {
     bottom: unset;
     left: unset;
