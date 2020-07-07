@@ -1,0 +1,410 @@
+* {
+    box-sizing: border-box;
+    touch-action: manipulation;
+}
+
+:root {
+    background-color: #444E8D;
+}
+
+html::before {
+    z-index: -1;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url('../../images/logo/Gradient.png');
+    background-color: #444E8D;
+}
+
+body {
+    margin: unset;
+    font-family: "SF Pro Text", -apple-system, sans-serif;
+    scroll-snap-type: y mandatory;
+    /*background-color: #444E8D;*/
+}
+
+.headerLogo {
+    --size: 70px;
+    --margin: 20px;
+    --filter: brightness(1.2) /*saturate(150%)*/ blur(50px);
+    -webkit-backdrop-filter: var(--filter);
+    backdrop-filter: var(--filter);
+    background-color: rgba(200, 200, 200, 0.2);
+    z-index: 2019;
+    position: fixed;
+    left: var(--margin);
+    top: var(--margin);
+}
+
+.headerLogo:after {
+    content: ' ';
+    background-image: url('https://ponomarev.studio/images/logo/Gradient.128px.png');
+    position: absolute;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.headerLogo,
+.headerLogo:after {
+    -webkit-mask-image: urL('https://ponomarev.studio/images/logo/Mono.svg');
+    -webkit-mask-size: contain;
+    -webkit-mask-position: left center;
+    -webkit-mask-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: var(--size);
+    height: calc(var(--size) / 2);
+}
+
+.headerLogo:hover:after,
+.headerLogo:focus:after {
+    opacity: 1;
+}
+
+.headerLogo:active {
+    transform: scale(.9);
+}
+
+.headerMenu {
+    transition: box-shadow .4s ease-out;
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 40px);
+    margin: 40px 20px;
+    padding: unset;
+    border-radius: 20px;
+    z-index: 1000;
+    box-shadow: 0 5px 20px 5px rgba(95, 92, 92, .2);
+}
+
+.headerMenu:before {
+    transition: background .4s ease-out;
+    content: '';
+    position: absolute;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: brightness(1.2) saturate(150%) blur(20px);
+    -webkit-backdrop-filter: brightness(1.2) saturate(150%) blur(20px);
+}
+
+#toggleMenu:checked ~ .headerMenu:before {
+    transition: background .3s ease-out;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+#toggleMenu {
+    display: none;
+}
+
+.menuBar {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    overflow: hidden;
+}
+
+.menuContent {
+    transition: all .3s ease-out;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    max-height: 0;
+    padding: 0 20px;
+    flex-direction: column;
+    border-bottom: solid 1px transparent;
+}
+
+.menuContent > a {
+    color: inherit;
+    text-decoration: none;
+    line-height: 2.5em;
+}
+
+.menuContent > a:first-child {
+    margin-top: 20px;
+}
+
+.menuContent > a:last-child {
+    margin-bottom: 20px;
+}
+
+#toggleMenu:checked ~ .headerMenu {
+    transition: box-shadow .3s ease-out;
+    box-shadow: 0 5px 40px 10px rgba(0, 0, 0, 0.3);
+}
+
+#toggleMenu:checked ~ .headerMenu > .menuContent {
+    transition: all .5s ease-out;
+    max-height: 500px;
+    border-bottom: solid 1px rgba(50, 50, 50, 0.1);
+}
+
+.menuItem {
+    transition: transform .2s .2s ease-out, opacity .1s .3s ease-out;
+    height: 50px;
+    /*margin: 0 5px;*/
+    line-height: 50px;
+    text-align: center;
+    color: inherit;
+    text-decoration: none;
+}
+
+#toggleMenu:checked ~ .headerMenu .menuItem {
+    transition: transform .2s ease-out, opacity .1s ease-out;
+    opacity: 0;
+    transform: translate(0, -50px);
+    pointer-events: none;
+}
+
+.openMenu {
+    display: flex;
+    color: rgba(0, 0, 0, .8);
+    height: 100%;
+    width: 60px;
+    /*line-height: 50px;*/
+    text-align: center;
+    font-size: 0;
+    text-decoration: none;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 18px 20px;
+    margin-right: -20px;
+}
+
+.openMenu:before,
+.openMenu:after {
+    transition: transform .4s ease-out;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    border-radius: 1px;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+#toggleMenu:checked ~ .headerMenu .openMenu {
+    pointer-events: none;
+}
+
+#toggleMenu:checked ~ .headerMenu .openMenu:before,
+#toggleMenu:checked ~ .headerMenu .openMenu:after {
+    transition: transform .3s ease-out;
+}
+
+#toggleMenu:checked ~ .headerMenu .openMenu:before {
+    /*transition: transform .3s;*/
+    transform: translate(0, 4.25px) rotate(45deg);
+}
+
+#toggleMenu:checked ~ .headerMenu .openMenu:after {
+    /*transition: transform .3s;*/
+    transform: translate(0, -4.25px) rotate(-45deg);
+}
+
+.closeMenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 50px;
+    font-size: 0;
+}
+
+.openMenu, .closeMenu {
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#toggleMenu:checked ~ .headerMenu .closeMenu {
+    display: block;
+}
+
+.sendMessage {
+    display: block;
+    height: 100%;
+    width: 60px;
+    font-size: 0;
+    background-image: url("../../images/comment.svg");
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: center;
+    opacity: .8;
+    margin-left: -20px;
+}
+
+main {
+    position: relative;
+    height: calc(10 * 100vh);
+}
+
+main > div {
+    position: absolute;
+    width: 100%;
+    height: calc((10 - var(--slide-number)) * 100vh);
+    z-index: var(--slide-number);
+    top: calc(var(--slide-number) * 100vh);
+    scroll-snap-align: start;
+}
+
+main > div:not(:first-child),
+main > div:not(:first-child) > section,
+main > div:not(:first-child) > section:before {
+}
+
+main > div:last-child,
+main > div:last-child > section,
+main > div:last-child > section:before {
+}
+
+main > div:last-child > section {
+    height: calc(100vh + 25px + 15px);
+}
+
+main > div:last-child {
+    height: 100vh;
+}
+
+main > div > section {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.cover {
+    /*background-repeat: no-repeat;*/
+    /*background-position: center;*/
+    /*background-size: cover;*/
+    /*background-image: url('../../images/logo/Gradient.png');*/
+    /*background-color: #444E8D;*/
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 80px;
+}
+
+.cover > h1 {
+    font-size: 40px;
+    margin: unset;
+}
+
+.cover > ul {
+    list-style: none;
+    /*margin-left: -10px;*/
+    padding-left: 0;
+}
+
+.cover > ul > li {
+    font-size: 20px;
+    font-weight: 500;
+    /*padding-left: 1em;*/
+    /*text-indent: -1em;*/
+    line-height: 40px;
+}
+
+.cover > ul > li:before {
+    content: attr(data-icon);
+    font-size: 20px;
+    line-height: 30px;
+    padding-right: 10px;
+}
+
+@media (orientation: landscape) {
+    .cover > ul {
+        columns: 2;
+        -webkit-columns: 2;
+        -moz-columns: 2;
+    }
+}
+
+.portfolioItem {
+    color: var(--accent-color, black);
+    background-color: var(--ambient-color, white);
+
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 80px;
+    transform: translate(0, -25px);
+    height: calc(100vh + 25px);
+    border-radius: 15px;
+}
+
+.portfolioItem:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    border-radius: 15px;
+    box-shadow: 0 -0px 10px 5px var(--shadow-color, var(--ambient-color, rgb(95, 92, 92)));
+    z-index: -1;
+    opacity: .2;
+}
+
+.portfolioItem:after {
+    --width: calc(20px * 2);
+    --height: 5px;
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: var(--width);
+    height: var(--height);
+    left: calc((100% - var(--width)) / 2);
+    top: 10px;
+    background: var(--accent-color, black);
+    opacity: .5;
+    border-radius: calc(var(--height) / 2);
+}
+
+.portfolioItem > span {
+    font-weight: 500;
+}
+
+.img-slider {
+    margin: 0 -20px;
+    margin-top: 20px;
+}
+
+.img-slider,
+.img-slider > div {
+    box-sizing: border-box;
+    width: 100vw;
+}
+
+.img-slider > div {
+    display: flex;
+    justify-content: space-between;
+    overflow: scroll;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.img-slider img {
+    height: 40vh;
+    min-width: 100vw;
+    scroll-snap-align: center;
+    object-fit: contain;
+    object-position: top;
+}
+
+footer {
+    height: 100vh;
+    background-color: black;
+    scroll-snap-align: start;
+}
