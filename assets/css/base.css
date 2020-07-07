@@ -8,11 +8,24 @@
     background-color: #444E8D;
 }
 
+html::before {
+    z-index: -1;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url('../../images/logo/Gradient.png');
+    background-color: #444E8D;
+}
+
 body {
     margin: unset;
     font-family: "SF Pro Text", -apple-system, sans-serif;
     scroll-snap-type: y mandatory;
-    background-color: #444E8D;
+    /*background-color: #444E8D;*/
 }
 
 .headerLogo {
@@ -271,11 +284,11 @@ main > div > section {
 }
 
 .cover {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-image: url('../../images/logo/Gradient.png');
-    background-color: #444E8D;
+    /*background-repeat: no-repeat;*/
+    /*background-position: center;*/
+    /*background-size: cover;*/
+    /*background-image: url('../../images/logo/Gradient.png');*/
+    /*background-color: #444E8D;*/
     color: white;
     display: flex;
     flex-direction: column;
@@ -307,6 +320,14 @@ main > div > section {
     font-size: 20px;
     line-height: 30px;
     padding-right: 10px;
+}
+
+@media (orientation: landscape) {
+    .cover > ul {
+        columns: 2;
+        -webkit-columns: 2;
+        -moz-columns: 2;
+    }
 }
 
 .portfolioItem {
