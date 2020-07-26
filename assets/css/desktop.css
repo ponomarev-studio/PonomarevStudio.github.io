@@ -32,3 +32,76 @@
     border-top: solid 1px rgba(50, 50, 50, 0.1);
     border-bottom: unset;
 }
+
+main > div:last-child > section {
+    height: 100vh;
+}
+
+.portfolioItem {
+    transform: unset;
+    height: 100vh;
+}
+
+.portfolioItem:before {
+    content: none;
+}
+
+.portfolioItemText {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+
+    box-shadow: 0 5px 20px 5px rgba(95, 92, 92, .2);
+    border-radius: 20px;
+    padding: 30px;
+    width: 400px;
+}
+
+.portfolioItemText:before {
+    transition: background .4s ease-out;
+    content: '';
+    position: absolute;
+    z-index: -1;
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: brightness(1.2) saturate(150%) blur(20px);
+    -webkit-backdrop-filter: brightness(1.2) saturate(150%) blur(20px);
+}
+
+.portfolioItemText > *:first-child {
+    margin-top: unset;
+}
+
+.portfolioItemText * {
+    font-size: 20px;
+}
+
+.portfolioItemText h3 {
+    font-size: 30px;
+}
+
+.img-slider {
+    z-index: -2;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: unset;
+}
+
+.img-slider,
+.img-slider > div {
+    height: 100%;
+}
+
+.img-slider img {
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}

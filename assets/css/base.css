@@ -407,4 +407,5 @@ footer {
     height: 100vh;
     background-color: black;
     scroll-snap-align: start;
+    position: relative;
 }
