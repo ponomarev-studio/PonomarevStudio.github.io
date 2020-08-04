@@ -357,7 +357,7 @@ main > div > section {
 }
 
 .portfolioItem:after {
-    --width: 135px;
+    --width: 134px;
     --height: 5px;
     content: '';
     position: absolute;
@@ -368,7 +368,7 @@ main > div > section {
     top: 12px;
     background: var(--accent-color, black);
     opacity: .5;
-    border-radius: calc(var(--height) / 2);
+    border-radius: var(--height);
 }
 
 .portfolioItem > span {
