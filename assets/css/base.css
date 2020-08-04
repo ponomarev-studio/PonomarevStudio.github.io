@@ -357,7 +357,7 @@ main > div > section {
 }
 
 .portfolioItem:after {
-    --width: 130px;
+    --width: 135px;
     --height: 5px;
     content: '';
     position: absolute;
