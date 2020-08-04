@@ -30,10 +30,10 @@ body {
 .headerLogo {
     --size: 70px;
     --margin: 20px;
-    --filter: brightness(1.2) saturate(1.5) blur(50px);
+    --filter: brightness(1.2) saturate(2.5) blur(50px);
     -webkit-backdrop-filter: var(--filter);
     backdrop-filter: var(--filter);
-    background-color: rgba(200, 200, 200, 0.4);
+    background-color: rgba(200, 200, 200, 0.7);
     z-index: 2019;
     position: fixed;
     left: var(--margin);
