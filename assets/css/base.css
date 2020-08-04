@@ -413,3 +413,13 @@ footer {
     scroll-snap-align: start;
     position: relative;
 }
+
+.serviceMessage {
+    font-size: 12px;
+}
+
+@media (min-width: 330px) {
+    .serviceMessage {
+        margin-top: 30px;
+    }
+}
