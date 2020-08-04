@@ -416,10 +416,29 @@ footer {
 
 .serviceMessage {
     font-size: 12px;
+    margin-top: 30px;
 }
 
-@media (min-width: 330px) {
+@media (max-width: 350px) {
+    .cover {
+        padding-top: 70px;
+    }
+
+    .cover > h1 {
+        font-size: 30px;
+    }
+
+    .cover > ul > li {
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    .cover > ul > li:before {
+        font-size: 18px;
+        line-height: 18px;
+    }
+
     .serviceMessage {
-        margin-top: 30px;
+        margin-top: unset;
     }
 }
