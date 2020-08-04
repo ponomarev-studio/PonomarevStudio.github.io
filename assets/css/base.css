@@ -375,6 +375,15 @@ main > div > section {
     border-radius: var(--height);
 }
 
+.portfolioItemText a {
+    color: inherit;
+    text-decoration: unset;
+}
+
+.portfolioItemText a:hover {
+    text-decoration: underline;
+}
+
 .portfolioItem > span {
     font-weight: 500;
 }
