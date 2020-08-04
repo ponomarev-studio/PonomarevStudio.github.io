@@ -440,6 +440,7 @@ footer {
 
     .portfolioItem:after {
         --width: 40px;
+        top: 10px;
     }
 
     .serviceMessage {
