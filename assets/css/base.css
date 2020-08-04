@@ -365,7 +365,7 @@ main > div > section {
     width: var(--width);
     height: var(--height);
     left: calc((100% - var(--width)) / 2);
-    top: 10px;
+    top: 12px;
     background: var(--accent-color, black);
     opacity: .5;
     border-radius: calc(var(--height) / 2);
