@@ -5,6 +5,7 @@
 
 :root {
     background-color: rgb(71, 55, 142);
+    scroll-snap-type: y mandatory;
 }
 
 html::before {
