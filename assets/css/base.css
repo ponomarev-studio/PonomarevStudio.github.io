@@ -6,9 +6,10 @@
 :root {
     background-color: rgb(71, 55, 142);
     scroll-snap-type: y mandatory;
+    font-family: "SF Pro Text", -apple-system, sans-serif;
 }
 
-html::before {
+:root:before {
     z-index: -1;
     position: fixed;
     height: 100vh;
@@ -23,7 +24,6 @@ html::before {
 
 body {
     margin: unset;
-    font-family: "SF Pro Text", -apple-system, sans-serif;
     scroll-snap-type: y mandatory;
     /*background-color: #444E8D;*/
 }
