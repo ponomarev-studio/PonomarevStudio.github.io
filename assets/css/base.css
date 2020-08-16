@@ -400,6 +400,10 @@ main > div > section {
     text-decoration: unset;
 }
 
+.portfolioItemText a:after {
+    content:" →"
+}
+
 .portfolioItemText a:hover {
     text-decoration: underline;
 }
