@@ -2,6 +2,10 @@
     overflow-x: hidden;
 }
 
+html::before {
+    background-size: 100% 100%;
+}
+
 .headerMenu {
     bottom: unset;
     left: unset;
