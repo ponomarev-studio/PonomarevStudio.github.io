@@ -2,7 +2,7 @@
     overflow-x: hidden;
 }
 
-html::before {
+:root:before {
     background-size: 100% 100%;
 }
 
