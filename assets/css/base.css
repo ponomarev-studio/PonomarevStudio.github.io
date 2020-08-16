@@ -421,6 +421,7 @@ footer {
     background-color: black;
     scroll-snap-align: start;
     position: relative;
+    overflow: hidden;
 }
 
 .serviceMessage {
