@@ -4,9 +4,20 @@
 }
 
 :root {
+    --root-padding: 20px;
+    --padding-left: var(--root-padding);
+    --padding-right: var(--root-padding);
     background-color: rgb(71, 55, 142);
     scroll-snap-type: y mandatory;
     font-family: "SF Pro Text", -apple-system, sans-serif;
+}
+
+@supports (padding: env(safe-area-inset-top)) {
+    :root {
+        --padding: max(env(safe-area-inset-top), var(--root-padding)) max(env(safe-area-inset-right), var(--root-padding)) max(env(safe-area-inset-bottom), var(--root-padding)) max(env(safe-area-inset-left), var(--root-padding));
+        --padding-left: max(env(safe-area-inset-left), var(--root-padding));
+        --padding-right: max(env(safe-area-inset-right), var(--root-padding));
+    }
 }
 
 :root:before {
@@ -37,8 +48,11 @@ body {
     background-color: rgba(200, 200, 200, 0.7);
     z-index: 2019;
     position: fixed;
-    left: var(--margin);
-    top: var(--margin);
+    /*left: var(--margin);*/
+    /*top: var(--margin);*/
+
+    left: max(env(safe-area-inset-left), var(--margin));
+    top: max(env(safe-area-inset-top), var(--margin));
 }
 
 .headerLogo:after {
@@ -75,8 +89,11 @@ body {
     transition: box-shadow .4s ease-out;
     position: fixed;
     bottom: 0;
-    width: calc(100% - 40px);
-    margin: 40px 20px;
+    width: calc(100% - var(--padding-left) - var(--padding-right));
+    margin-bottom: 40px;
+    /*margin: max(env(safe-area-inset-top), 40px) max(env(safe-area-inset-bottom), 40px) max(env(safe-area-inset-left), var(--root-padding));*/
+    margin-left: var(--padding-left);
+    margin-right: var(--padding-right);
     padding: unset;
     border-radius: 22px;
     z-index: 1000;
@@ -296,7 +313,7 @@ main > div > section {
     color: white;
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: var(--padding);
     padding-top: 80px;
 }
 
@@ -341,6 +358,8 @@ main > div > section {
     display: flex;
     flex-direction: column;
     padding: 20px;
+    padding-left: var(--padding-left);
+    padding-right: var(--padding-right);
     padding-top: 80px;
     transform: translate(0, -25px);
     height: calc(100vh + 25px);
@@ -391,6 +410,8 @@ main > div > section {
 
 .img-slider {
     margin: 0 -20px;
+    margin-left: calc(var(--padding-left) * -1);
+    margin-right: calc(var(--padding-right) * -1);
     margin-top: 20px;
 }
 
@@ -462,6 +483,12 @@ footer {
 
 @media (min-width: 375px) {
     .headerMenu {
-        margin: 80px 20px;
+        margin-bottom: 80px;
+    }
+}
+
+@media (orientation: landscape) {
+    :root:before {
+        background-size: 100% 100%;
     }
 }
