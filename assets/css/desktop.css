@@ -44,9 +44,11 @@ main > div:last-child > section {
 .portfolioItem {
     transform: unset;
     height: 100vh;
+    border-radius: unset;
 }
 
-.portfolioItem:before {
+.portfolioItem:before,
+.portfolioItem:after {
     content: none;
 }
 
