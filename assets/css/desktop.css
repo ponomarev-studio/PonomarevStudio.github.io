@@ -41,6 +41,64 @@ main > div:last-child > section {
     height: 100vh;
 }
 
+.cover {
+    padding: 100px;
+}
+
+.cover h1 {
+    font-size: 130px;
+    font-weight: 800;
+    max-width: 1000px;
+}
+
+.cover > ul {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: calc(100% - 200px);
+    bottom: 100px;
+}
+
+.cover > ul > li {
+    --size: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    height: var(--size);
+    width: var(--size);
+    line-height: initial;
+    transition: all .5s;
+}
+
+.cover > ul > li:hover {
+    box-shadow: 0 0 50px 5px rgba(255, 255, 255, 0.15);
+    -webkit-backdrop-filter: blur(100px) saturate(1.3);
+    backdrop-filter: blur(100px);
+    transition: all .5s;
+}
+
+.cover > ul > li:before {
+    font-size: 60px;
+    line-height: initial;
+    margin-top: -10px;
+}
+
+.cover > ul > li.ext-left-margin-15:before {
+    margin-left: -15px;
+}
+
+.cover > ul > li.ext-left-margin-5:before {
+    margin-left: -5px;
+}
+
+.serviceMessage {
+    position: absolute;
+    bottom: 50px;
+}
+
 .portfolioItem {
     transform: unset;
     height: 100vh;
