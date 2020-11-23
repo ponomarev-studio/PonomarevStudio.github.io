@@ -8,7 +8,7 @@
     --padding-left: var(--root-padding);
     --padding-right: var(--root-padding);
     background-color: rgb(71, 55, 142);
-    scroll-snap-type: y mandatory;
+    /*scroll-snap-type: y mandatory;*/
     font-family: "SF Pro Text", -apple-system, sans-serif;
 }
 
@@ -35,7 +35,7 @@
 
 body {
     margin: unset;
-    scroll-snap-type: y mandatory;
+    /*scroll-snap-type: y mandatory;*/
     /*background-color: #444E8D;*/
 }
 
