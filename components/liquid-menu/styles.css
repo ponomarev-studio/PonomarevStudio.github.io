@@ -168,12 +168,16 @@
     /*margin-left: -20px;*/
 }
 
+@media (hover) {
+
 .toggleMenu:hover,
 .sendMessage:hover,
 ::slotted(a[slot="bar"]:hover),
 .menuContent ::slotted(a:hover) {
     background-color: rgba(255, 255, 255, .1);
     -webkit-backdrop-filter: saturate(3);
+}
+
 }
 
 .toggleMenu:active,
