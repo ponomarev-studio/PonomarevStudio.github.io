@@ -13,28 +13,19 @@
     <link href="/images/logo/LargeBlack.256px.png" rel="shortcut icon" type="image/x-icon"/>
     <link href="assets/css/base.css" rel="stylesheet">
     <link href="assets/css/desktop.css" media="(min-width: 1024px)" rel="stylesheet">
+    <script src="/components/liquid-menu/menu.js" type="module"></script>
 </head>
 <body>
 <header>
     <a class="headerLogo" href="/"></a>
-    <input id="toggleMenu" type="checkbox"/>
-    <menu class="headerMenu" id="menu">
-        <nav class="menuContent">
-            <a href="/">Решения</a>
-            <a href="https://t.me/PonomarevStudio" target="_blank">Telegram</a>
-            <a href="https://wa.me/79956753783" target="_blank">WhatsApp</a>
-            <a href="https://github.com/PonomarevStudio" target="_blank">GitHub</a>
-        </nav>
-        <nav class="menuBar">
-            <!--            <a class="toggleMenu" href="#menu">Открыть меню</a>-->
-            <label class="openMenu" for="toggleMenu">Открыть меню</label>
-            <a class="menuItem" href="/">Решения</a>
-            <a class="menuItem" href="https://github.com/PonomarevStudio" target="_blank">GitHub</a>
-            <a class="sendMessage" href="https://t.me/PonomarevStudio" target="_blank">Написать в Telegram</a>
-            <label class="closeMenu" for="toggleMenu">Открыть меню</label>
-            <!--            <a class="closeMenu" href="#!">Загрыть меню</a>-->
-        </nav>
-    </menu>
+    <liquid-menu class="loading">
+        <a href="/">Решения</a>
+        <a href="https://t.me/PonomarevStudio" target="_blank">Telegram</a>
+        <a href="https://wa.me/79956753783" target="_blank">WhatsApp</a>
+        <a href="https://github.com/PonomarevStudio" target="_blank">GitHub</a>
+        <a href="/" slot="bar">Решения</a>
+        <a href="https://github.com/PonomarevStudio" slot="bar" target="_blank">GitHub</a>
+    </liquid-menu>
 </header>
 <main>
     <div style="--slide-number:0">
