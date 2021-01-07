@@ -169,3 +169,13 @@ main > div:last-child > section {
     object-fit: cover;
     object-position: top center;
 }
+
+footer {
+    flex-direction: row;
+}
+
+footer > aside {
+    height: 100%;
+    width: 50%;
+    display: initial !important;
+}

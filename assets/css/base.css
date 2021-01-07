@@ -466,6 +466,17 @@ footer {
     scroll-snap-align: start;
     /*position: relative;*/
     overflow: hidden;
+    display: flex;
+}
+
+footer > aside {
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+
+footer > aside:first-of-type {
+    display: none;
 }
 
 .serviceMessage {
