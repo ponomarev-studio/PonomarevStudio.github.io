@@ -6,6 +6,10 @@
     background-size: 100% 100%;
 }
 
+body {
+    padding-bottom: 100vh;
+}
+
 .headerMenu {
     bottom: unset;
     left: unset;
@@ -43,6 +47,7 @@ main > div:last-child > section {
 
 .cover {
     padding: 100px;
+    background-size: 100% 100%;
 }
 
 .cover h1 {
@@ -172,6 +177,7 @@ main > div:last-child > section {
 
 footer {
     flex-direction: row;
+    height: 100vh;
 }
 
 footer > aside {

@@ -37,7 +37,7 @@ body {
     margin: unset;
     /*scroll-snap-type: y mandatory;*/
     /*background-color: #444E8D;*/
-    padding-bottom: 90vh;
+    padding-bottom: 70vh;
 }
 
 .loading {
@@ -62,7 +62,7 @@ body {
 
 .headerLogo:after {
     content: ' ';
-    background-image: url('https://ponomarev.studio/images/logo/Gradient.128px.png');
+    background-image: url('/images/logo/Gradient.128px.png');
     position: absolute;
     opacity: 0;
     transition: opacity .5s;
@@ -70,7 +70,7 @@ body {
 
 .headerLogo,
 .headerLogo:after {
-    -webkit-mask-image: urL('https://ponomarev.studio/images/logo/Mono.svg');
+    -webkit-mask-image: urL('/images/logo/Mono.svg');
     -webkit-mask-size: contain;
     -webkit-mask-position: left center;
     -webkit-mask-repeat: no-repeat;
@@ -461,7 +461,7 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 90vh;
+    height: 70vh;
     background-color: black;
     scroll-snap-align: start;
     /*position: relative;*/
