@@ -8,7 +8,7 @@
     position: fixed;
     bottom: 0;
     width: calc(100% - var(--padding-left) - var(--padding-right));
-    margin-bottom: 40px;
+    margin-bottom: max(40px, calc(env(safe-area-inset-bottom, 0) + 20px));
     /*margin: max(env(safe-area-inset-top), 40px) max(env(safe-area-inset-bottom), 40px) max(env(safe-area-inset-left), var(--root-padding));*/
     margin-left: var(--padding-left);
     margin-right: var(--padding-right);
@@ -170,13 +170,13 @@
 
 @media (hover) {
 
-.toggleMenu:hover,
-.sendMessage:hover,
-::slotted(a[slot="bar"]:hover),
-.menuContent ::slotted(a:hover) {
-    background-color: rgba(255, 255, 255, .1);
-    -webkit-backdrop-filter: saturate(3);
-}
+    .toggleMenu:hover,
+    .sendMessage:hover,
+    ::slotted(a[slot="bar"]:hover),
+    .menuContent ::slotted(a:hover) {
+        background-color: rgba(255, 255, 255, .1);
+        -webkit-backdrop-filter: saturate(3);
+    }
 
 }
 
