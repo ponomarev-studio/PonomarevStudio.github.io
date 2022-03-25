@@ -484,6 +484,11 @@ footer > aside:last-of-type {
     margin-top: 20px;
 }
 
+#myReviews__bottom-left-container {
+    left: unset !important;
+    right: 0px !important;
+}
+
 @media (max-width: 350px) {
     .cover {
         padding-top: 70px;
