@@ -1,7 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="160px" height="160px" preserveAspectRatio="none">
-    <text x="0" y="0"
-          style="dominant-baseline: hanging;font-size:160px;line-height:160px;font-family:Helvetica,sans-serif;font-weight:700"
-          textLength="100%"
-          lengthAdjust="spacingAndGlyphs">Ponomarev.Studio
-    </text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600px" height="1600px" preserveAspectRatio="none">
+    <style>
+        text {
+        dominant-baseline: hanging;
+        font-size: 1600px;
+        line-height: 1600px;
+        font-family: Helvetica, sans-serif;
+        font-weight: 700
+        }
+    </style>
+    <text x="0" y="50" textLength="100%" lengthAdjust="spacingAndGlyphs">Ponomarev.Studio</text>
 </svg>

@@ -6,49 +6,45 @@
           name="viewport">
     <title>Text backdrop blur demo</title>
     <style>
-        :root:before {
-            content: '';
-            z-index: -1;
-            position: fixed;
+        body {
+            font-family: Helvetica, sans-serif;
+            width: 100%;
+            margin: unset;
+        }
+
+        img {
+            margin: 0;
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        aside {
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url('https://images.unsplash.com/photo-1604427055111-7506e475a489?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-        }
-
-        body {
-            font-family: Helvetica, sans-serif;
-            width: 100%;
-            height: 180vh;
             display: flex;
-            justify-content: center;
+            position: fixed;
             align-items: center;
-            margin: unset;
+            pointer-events: none;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        div {
+        section {
             --filter: blur(30px);
 
-            min-width: 300px;
-            max-width: 40vw;
             width: 100%;
-            aspect-ratio: 833 / 100;
-
-            font-size: 30px;
-            font-weight: 700;
-
-            -webkit-backdrop-filter: var(--filter);
-            backdrop-filter: var(--filter);
+            padding: 5vw;
+            max-width: 40vw;
+            border-radius: 5vw;
             background-color: rgba(0, 0, 0, 0.2);
-            border-radius: 30px;
-            padding: 30px;
+            backdrop-filter: var(--filter);
+            -webkit-backdrop-filter: var(--filter);
         }
 
-        div:before {
+        section:before {
             --filter: blur(50px) saturate(3) brightness(2);
             content: '';
 
@@ -66,9 +62,34 @@
 
             background-color: rgba(256, 256, 256, 0.2);
         }
+
+        @media (orientation: portrait) {
+            section {
+                padding: 10vw;
+                max-width: 60vw;
+                border-radius: 10vw;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                min-height: 100vh;
+                object-fit: cover;
+                min-height: -moz-available;
+                min-height: -webkit-fill-available;
+                min-height: fill-available;
+            }
+        }
     </style>
 </head>
 <body>
-<div></div>
+<img decoding="async" height="2048" src="https://picsum.photos/2048?1" width="2048">
+<img decoding="async" height="2048" src="https://picsum.photos/2048?2" width="2048">
+<img decoding="async" height="2048" src="https://picsum.photos/2048?3" width="2048">
+<img decoding="async" height="2048" src="https://picsum.photos/2048?4" width="2048">
+<img decoding="async" height="2048" src="https://picsum.photos/2048?5" width="2048">
+<aside>
+    <section></section>
+</aside>
 </body>
 </html>
