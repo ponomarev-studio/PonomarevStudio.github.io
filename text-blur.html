@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+          name="viewport">
+    <title>Text backdrop blur demo</title>
+    <style>
+        * {
+            box-sizing: content-box;
+        }
+
+        body {
+            font-family: Helvetica, sans-serif;
+            width: 100%;
+            margin: unset;
+        }
+
+        img {
+            margin: 0;
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        aside {
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100vh;
+            display: flex;
+            position: fixed;
+            align-items: center;
+            pointer-events: none;
+            flex-direction: column;
+            justify-content: center;
+            height: -moz-available;
+            height: -webkit-fill-available;
+            height: fill-available;
+        }
+
+        section {
+            --filter: blur(30px);
+            --mask: url('/Ponomarev.Studio.svg');
+            max-width: 40vw;
+            padding: 5vw;
+            border-radius: 5vw;
+            pointer-events: initial;
+            background-color: rgba(0, 0, 0, 0.2);
+            backdrop-filter: var(--filter);
+            -webkit-backdrop-filter: var(--filter);
+        }
+
+        section h1 {
+            font-size: 4vw;
+            font-weight: 700;
+            margin: unset;
+        }
+
+        *[data-mask] {
+            --mask: none;
+            color: transparent;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        *[data-mask]:before {
+            --filter: blur(50px) saturate(3) brightness(2);
+            content: '';
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: block;
+            position: absolute;
+            -webkit-mask-image: var(--mask);
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-position-y: .1em;
+            -webkit-backdrop-filter: var(--filter);
+            backdrop-filter: var(--filter);
+            background-color: rgba(256, 256, 256, 0.2);
+        }
+
+        *[data-mask]:focus {
+            color: white;
+        }
+
+        *[data-mask]:focus:before {
+            opacity: 0;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (orientation: portrait) {
+            section {
+                padding: 10vw;
+                max-width: 60vw;
+                border-radius: 10vw;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                min-height: 100vh;
+                object-fit: cover;
+                min-height: -moz-available;
+                min-height: -webkit-fill-available;
+                min-height: fill-available;
+            }
+        }
+    </style>
+</head>
+<body>
+<img decoding="async" height="2048" src="https://picsum.photos/2048?1" width="2048">
+<img decoding="async" height="2048" src="https://picsum.photos/2048?2" width="2048">
+<img decoding="async" height="2048" src="https://picsum.photos/2048?3" width="2048">
+<img decoding="async" height="2048" src="https://picsum.photos/2048?4" width="2048">
+<img decoding="async" height="2048" src="https://picsum.photos/2048?5" width="2048">
+<aside>
+    <section>
+        <h1 contenteditable="true" data-mask="true">Ponomarev.Studio</h1>
+        <p contenteditable="true" data-mask="true">Нажмите на этот текст или на заголовок, чтобы изменить ✨</p>
+    </section>
+</aside>
+</body>
+<script defer type="module">
+    import SvgText from 'https://cdn.skypack.dev/@ponomarevlad/svg-text';
+
+    function updateMask(targetNode) {
+        const text = targetNode.innerText,
+            element = document.createElementNS("http://www.w3.org/2000/svg", "svg"),
+            styleElement = document.createElement("style"),
+            contentStyles = window.getComputedStyle(targetNode);
+        element.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+        targetNode.append(element);
+        element.append(styleElement);
+        const options = {
+            text,
+            element,
+            styleElement,
+            width: targetNode.clientWidth + 1,
+            height: targetNode.clientHeight,
+            // padding: parseFloat(contentStyles.getPropertyValue('padding')),
+            style: {
+                fontFamily: contentStyles.getPropertyValue('font-family'),
+                fontWeight: contentStyles.getPropertyValue('font-weight'),
+                fontSize: contentStyles.getPropertyValue('font-size'),
+                lineHeight: contentStyles.getPropertyValue('line-height')
+            }
+        }
+        new SvgText(options)
+        targetNode.removeChild(element);
+        targetNode.style.setProperty('--mask', `url("data:image/svg+xml;utf-8,${encodeURIComponent(element.outerHTML)}")`);
+    }
+
+    document.querySelectorAll('[data-mask]').forEach(content => {
+        updateMask(content);
+        content.addEventListener('input', () => updateMask(content))
+    })
+</script>
+</html>
