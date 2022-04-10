@@ -59,9 +59,11 @@
 
         *[data-mask] {
             --mask: none;
-            color: transparent;
-            position: relative;
+            outline: none;
             line-height: 1.5;
+            position: relative;
+            transition: color .3s;
+            color: rgba(256, 256, 256, 0);
         }
 
         *[data-mask]:before {
@@ -71,21 +73,28 @@
             left: 0;
             right: 0;
             bottom: 0;
+            opacity: 1;
             display: block;
             position: absolute;
+            transition: opacity .3s;
             -webkit-mask-image: var(--mask);
             -webkit-mask-repeat: no-repeat;
             -webkit-mask-position-y: .1em;
-            -webkit-backdrop-filter: var(--filter);
             backdrop-filter: var(--filter);
+            -webkit-backdrop-filter: var(--filter);
             background-color: rgba(256, 256, 256, 0.2);
         }
 
-        *[data-mask]:focus {
-            color: white;
+        *[data-mask]:focus,
+        *[data-mask="loading"] {
+            color: rgba(256, 256, 256, 1);
         }
 
         *[data-mask]:focus:before {
+            opacity: 0;
+        }
+
+        *[data-mask="loading"]:before {
             opacity: 0;
         }
 
@@ -121,8 +130,8 @@
 <img decoding="async" height="2048" src="https://picsum.photos/2048?5" width="2048">
 <aside>
     <section>
-        <h1 contenteditable="true" data-mask="true">Ponomarev.Studio</h1>
-        <p contenteditable="true" data-mask="true">Нажмите на этот текст или на заголовок, чтобы изменить ✨</p>
+        <h1 contenteditable="true" data-mask="loading">Ponomarev.Studio</h1>
+        <p contenteditable="true" data-mask="loading">Нажмите на этот текст или на заголовок, чтобы изменить ✨</p>
     </section>
 </aside>
 </body>
@@ -154,6 +163,7 @@
         new SvgText(options)
         targetNode.removeChild(element);
         targetNode.style.setProperty('--mask', `url("data:image/svg+xml;utf-8,${encodeURIComponent(element.outerHTML)}")`);
+        targetNode.dataset.mask = 'ready';
     }
 
     document.querySelectorAll('[data-mask]').forEach(content => {
